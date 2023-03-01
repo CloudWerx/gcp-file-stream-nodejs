@@ -4,6 +4,14 @@ import stripBOM from 'strip-bom-stream'
 import { storage } from './storage.js'
 import { getFetchStream } from './getFetchStream.js'
 
+/**
+ *
+ * @param {string} url - URL to stream from
+ * @param {string} bucketName - GCS bucket name
+ * @param {string} fileName - GCS file name
+ * @param {boolean} [zipped=false] - Whether the file is zipped
+ * @returns Promise<null>
+ */
 export const streamFileToGCS = async (
   url: string,
   bucketName: string,
